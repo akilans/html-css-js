@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Condtions and Loops</title>
+</head>
+
+<body>
+    <div class="jumbotron actor">
+        <h1>Condtions and Loops!</h1>
+        <pre>
+            <code>
+                let actorName = "surya";
+
+                let actorList = [
+                    { name : "Surya", movie: "7m arivu"},
+                    { name : "Vijay", movie: "Thuppakki"},
+                    { name : "Ajith", movie: "Kathal Mannan"}
+                ]
+        
+                // If else
+        
+                if (actorName == "surya" || actorName == "vijay" || actorName=="ajith") {
+                    console.log("Fav Actor");
+                }else{
+                    console.log("Not a fav actor")
+                }
+        
+                let actorDiv = document.querySelector(".actor");
+        
+                /*
+                // For loop method 1
+                 for(let i=0; i < actorList.length; i++){
+                     let dogDiv = document.createElement("div");
+                     dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+                     actorDiv.appendChild(dogDiv)
+                 }
+        
+        
+                // For loop method 2 // recommended
+                for(actor of actorList){
+                    console.log(actor)
+                     let dogDiv = document.createElement("div");
+                     dogDiv.innerText = `${actor.name}'s fav movie ${actor.movie}`;
+                     actorDiv.appendChild(dogDiv)
+                 }
+                 */
+        
+                 /*
+        
+                 let i = 0;
+        
+                 while( i < actorList.length){
+                    let dogDiv = document.createElement("div");
+                     dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+                     actorDiv.appendChild(dogDiv);
+                     i++;
+                 }
+                 */
+        
+                 let i = 0;
+                 do{
+                    let dogDiv = document.createElement("div");
+                     dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+                     actorDiv.appendChild(dogDiv);
+                     i++;
+                 }while(i < actorList.length)
+            </code>
+        </pre>
+    </div>
+    
+
+    <script>
+
+        let actorName = "surya";
+
+        let actorList = [
+            { name : "Surya", movie: "7m arivu"},
+            { name : "Vijay", movie: "Thuppakki"},
+            { name : "Ajith", movie: "Kathal Mannan"}
+        ]
+
+        // If else
+
+        if (actorName == "surya" || actorName == "vijay" || actorName=="ajith") {
+            console.log("Fav Actor");
+        }else{
+            console.log("Not a fav actor")
+        }
+
+        let actorDiv = document.querySelector(".actor");
+
+        /*
+        // For loop method 1
+         for(let i=0; i < actorList.length; i++){
+             let dogDiv = document.createElement("div");
+             dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+             actorDiv.appendChild(dogDiv)
+         }
+
+
+        // For loop method 2 // recommended
+        for(actor of actorList){
+            console.log(actor)
+             let dogDiv = document.createElement("div");
+             dogDiv.innerText = `${actor.name}'s fav movie ${actor.movie}`;
+             actorDiv.appendChild(dogDiv)
+         }
+         */
+
+         /*
+
+         let i = 0;
+
+         while( i < actorList.length){
+            let dogDiv = document.createElement("div");
+             dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+             actorDiv.appendChild(dogDiv);
+             i++;
+         }
+         */
+
+         let i = 0;
+         do{
+            let dogDiv = document.createElement("div");
+             dogDiv.innerText = `${actorList[i].name}'s fav movie ${actorList[i].movie}`;
+             actorDiv.appendChild(dogDiv);
+             i++;
+         }while(i < actorList.length)
+
+    
+    </script>
+</body>
+
+</html>

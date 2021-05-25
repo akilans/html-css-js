@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Operators</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Operators!</h1>
+        <pre>
+            <code>
+
+                let a = 1, b = 2, c = 3;
+                let strNum = "100"
+                let name = "Akilan";
+                let intro = "My name is "
+        
+                // Addition
+                console.groupCollapsed( "Addition" );
+                    console.log(a + b); //3
+                    console.log(a + strNum); //1100
+                    console.log(intro + name); //My name is Akilan
+                    console.log(name + " is a DevOps engineer");
+                console.groupEnd()
+        
+                // Subtraction
+                console.groupCollapsed( "Subtraction" );
+                    console.log(b - a); //1
+                    console.log(c -a); //2
+                console.groupEnd()
+        
+                // Multiplication
+                console.groupCollapsed( "Multiplication" );
+                    console.log(a * b); //2
+                    console.log(b * c); //6
+                console.groupEnd()
+        
+                // Incrementing
+                console.groupCollapsed( "Incrementing" );
+                    console.log(a + 1); //2
+                    console.log(a++); //1
+                    console.log(a); //2
+                    console.log(++b); //3
+                    console.log(c--); //3
+                    console.log(c); //2
+                console.groupEnd()
+            </code>
+        </pre>
+    </div>
+
+    <script>
+
+        let a = 1, b = 2, c = 3;
+        let strNum = "100"
+        let name = "Akilan";
+        let intro = "My name is "
+
+        // Addition
+        console.groupCollapsed( "Addition" );
+            console.log(a + b); //3
+            console.log(a + strNum); //1100
+            console.log(intro + name); //My name is Akilan
+            console.log(name + " is a DevOps engineer");
+        console.groupEnd()
+
+        // Subtraction
+        console.groupCollapsed( "Subtraction" );
+            console.log(b - a); //1
+            console.log(c -a); //2
+        console.groupEnd()
+
+        // Multiplication
+        console.groupCollapsed( "Multiplication" );
+            console.log(a * b); //2
+            console.log(b * c); //6
+        console.groupEnd()
+
+        // Incrementing
+        console.groupCollapsed( "Incrementing" );
+            console.log(a + 1); //2
+            console.log(a++); //1
+            console.log(a); //2
+            console.log(++b); //3
+            console.log(c--); //3
+            console.log(c); //2
+        console.groupEnd()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Comparison</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>Comparison!</h1>
+        <pre>
+            <code>
+                let myName = "akilan";
+                let newName = "AKILAN";
+                let age = 34;
+                let strAge = "34";
+        
+                // String and Number Comparison
+                console.groupCollapsed( "String and Number Comparison" );
+                    console.log(myName == "akilan") // true
+                    console.log(myName == newName) // false
+                    console.log(myName == newName.toLowerCase()) // true
+                    console.log(age == strAge) // true
+                    console.log(age === strAge) // false // check type as well
+                    console.log(myName != "akilan") // false
+                    console.log(age !== strAge) // true
+                console.groupEnd()
+        
+                let workLocation; // undefined
+                let company = null;
+        
+                // Boolean comparison
+                console.groupCollapsed( "Boolean comparison" );
+                    console.log(Boolean(workLocation)); //false
+                    console.log(Boolean(company)); //false
+                    console.log(Boolean(myName)); //true
+                    console.log(!Boolean(workLocation)); //true
+                console.groupEnd()
+        
+                let numbers1 = [1,2,3];
+                let numbers2 = [1,2,3];
+                let rose1 = { color: "red"}
+                let rose2 = { color: "red"}
+        
+                // Object and Array Comparison
+                console.groupCollapsed( "Object and Array Comparison" );
+                    console.log(numbers1 == numbers2) // false
+                    console.log(rose1 == rose2); //false
+                console.groupEnd()
+        
+        
+                // AND OR comparison
+                console.groupCollapsed( "AND OR comparison" );
+                    // AND both must be true
+                    console.log(Boolean("") && Boolean("")) // false
+                    console.log(Boolean(myName) && Boolean("")) // false
+                    console.log(Boolean(myName) && Boolean(age)) // true
+        
+                    //OR atleast one should be true
+                    console.log(Boolean("") || Boolean("")) // false
+                    console.log(Boolean(myName) || Boolean("")) // true
+                    console.log(Boolean(myName) || Boolean(age)) // true
+        
+                console.groupEnd()
+            </code>
+        </pre>
+    </div>
+
+    <script>
+
+        let myName = "akilan";
+        let newName = "AKILAN";
+        let age = 34;
+        let strAge = "34";
+
+        // String and Number Comparison
+        console.groupCollapsed( "String and Number Comparison" );
+        console.log( myName == "akilan" ) // true
+        console.log( myName == newName ) // false
+        console.log( myName == newName.toLowerCase() ) // true
+        console.log( age == strAge ) // true
+        console.log( age === strAge ) // false // check type as well
+        console.log( myName != "akilan" ) // false
+        console.log( age !== strAge ) // true
+        console.groupEnd()
+
+        let workLocation = undefined; // undefined
+        let company = null;
+
+        // Boolean comparison
+        console.groupCollapsed( "Boolean comparison" );
+        console.log( Boolean( workLocation ) ); //false
+        console.log( Boolean( company ) ); //false
+        console.log( Boolean( myName ) ); //true
+        console.log( !Boolean( workLocation ) ); //true
+        console.groupEnd()
+
+        let numbers1 = [ 1, 2, 3 ];
+        let numbers2 = [ 1, 2, 3 ];
+        let rose1 = { color: "red" }
+        let rose2 = { color: "red" }
+
+        // Object and Array Comparison
+        console.groupCollapsed( "Object and Array Comparison" );
+        console.log( numbers1 == numbers2 ) // false
+        console.log( rose1 == rose2 ); //false
+        console.groupEnd()
+
+
+        // AND OR comparison
+        console.groupCollapsed( "AND OR comparison" );
+        // AND both must be true
+        console.log( Boolean( "" ) && Boolean( "" ) ) // false
+        console.log( Boolean( myName ) && Boolean( "" ) ) // false
+        console.log( Boolean( myName ) && Boolean( age ) ) // true
+
+        //OR atleast one should be true
+        console.log( Boolean( "" ) || Boolean( "" ) ) // false
+        console.log( Boolean( myName ) || Boolean( "" ) ) // true
+        console.log( Boolean( myName ) || Boolean( age ) ) // true
+
+        console.groupEnd()
+
+    </script>
+</body>
+
+</html>
