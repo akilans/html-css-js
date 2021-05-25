@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aqua;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+
+.shape {
+    background-color: blueviolet;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+
+.circle1 {
+    bottom: 0;
+    background-color: darkred;
+}
+
+.circle2 {
+    bottom: 20%;
+    background-color: darkseagreen;
+}
+
+.circle3 {
+    bottom: 40%;
+    background-color: deeppink;
+}
+
+.circle4 {
+    bottom: 60%;
+    background-color: gold;
+}
