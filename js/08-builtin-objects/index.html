@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Builtin Objects</title>
+</head>
+
+<body>
+    <div class="jumbotron actor">
+        <h1>Builtin Objects!</h1>
+
+        <pre>
+            <code>
+                
+
+                let greet = "Hello Akilan";
+                console.groupCollapsed( "String Objects" );
+                console.log( greet.length ); // 12
+                console.log( greet.startsWith( "Hello" ) ); //true
+                console.log( greet.toLocaleUpperCase() ); // HELLO AKILAN
+                console.log( "   Hello Aki   ".trim() ) //Hello Aki
+                console.log( greet.split( " " ) ); //["Hello", "Akilan"]
+                console.groupEnd()
+        
+        
+                let skills = [ "DevOps", "AWS", "Kubernetes", "Python", "Docker" ];
+        
+                let showSkills = ( item, index ) => {
+                    console.log( `${index + 1}  Akilan knows  ${item}` );
+                };
+        
+                console.groupCollapsed( "Array Objects" );
+                console.log( skills.length ); //5
+                console.log( skills.indexOf( "Python" ) ) // 3
+                console.log( skills.join() ); //DevOps,AWS,Kubernetes,Python,Docker
+                skills.forEach( showSkills );
+        
+                let skills_start_with_d = skills.filter( ( skill ) => {
+                    return skill.startsWith( "D" );
+                } )
+        
+                console.log( skills_start_with_d ) //["DevOps", "Docker"]
+        
+        
+                let skills_by_single_string = skills.reduce( ( concatString, skill ) => {
+                    return concatString + " " + skill;
+                } )
+        
+                console.log( skills_by_single_string ); //DevOps AWS Kubernetes Python Docker
+        
+        
+                let numbers = [1, 2, 3];
+        
+                let double_numbers = numbers.map((number)=>{
+                    return number * 2;
+                })
+        
+                console.log(double_numbers); //[2, 4, 6]
+        
+                console.groupEnd();
+            </code>
+        </pre>
+    </div>
+
+
+    <script>
+
+        let greet = "Hello Akilan";
+        console.groupCollapsed( "String Objects" );
+        console.log( greet.length ); // 12
+        console.log( greet.startsWith( "Hello" ) ); //true
+        console.log( greet.toLocaleUpperCase() ); // HELLO AKILAN
+        console.log( "   Hello Aki   ".trim() ) //Hello Aki
+        console.log( greet.split( " " ) ); //["Hello", "Akilan"]
+        console.groupEnd()
+
+
+        let skills = [ "DevOps", "AWS", "Kubernetes", "Python", "Docker" ];
+
+        let showSkills = ( item, index ) => {
+            console.log( `${index + 1}  Akilan knows  ${item}` );
+        };
+
+        console.groupCollapsed( "Array Objects" );
+        console.log( skills.length ); //5
+        console.log( skills.indexOf( "Python" ) ) // 3
+        console.log( skills.join() ); //DevOps,AWS,Kubernetes,Python,Docker
+        skills.forEach( showSkills );
+
+        let skills_start_with_d = skills.filter( ( skill ) => {
+            return skill.startsWith( "D" );
+        } )
+
+        console.log( skills_start_with_d ) //["DevOps", "Docker"]
+
+
+        let skills_by_single_string = skills.reduce( ( concatString, skill ) => {
+            return concatString + " " + skill;
+        } )
+
+        console.log( skills_by_single_string ); //DevOps AWS Kubernetes Python Docker
+
+
+        let numbers = [ 1, 2, 3 ];
+
+        let double_numbers = numbers.map( ( number ) => {
+            return number * 2;
+        } )
+
+        console.log( double_numbers ); //[2, 4, 6]
+
+        console.groupEnd();
+
+    </script>
+</body>
+
+</html>

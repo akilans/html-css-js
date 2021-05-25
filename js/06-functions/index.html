@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Functions</title>
+</head>
+
+<body>
+    <div class="jumbotron actor">
+        <h1>Functions!</h1>
+
+        <pre>
+            <code>
+                function sayMessage(message,name="Akilan"){
+                    console.log(`Hello ${name}, ${message}` );
+                }
+        
+                sayMessage("Welcome");
+                sayMessage("Goodbye","Mathan");
+        
+                function squared(a){
+                    return a * a;
+                }
+        
+                console.log(squared(5));
+        
+                let squaredFuncAsVariable = function(a){
+                    return a * a;
+                }
+        
+                console.log(squaredFuncAsVariable(5));
+        
+        
+                let squaredFuncAsArrow = (a) => {
+                    return a * a;
+                }
+        
+                console.log(squaredFuncAsArrow(5));
+        
+                
+            </code>
+        </pre>
+    </div>
+
+
+    <script>
+
+        function sayMessage( message, name = "Akilan" ) {
+            console.log( `Hello ${name}, ${message}` );
+        }
+
+        sayMessage( "Welcome" );
+        sayMessage( "Goodbye", "Mathan" );
+
+        function squared( a ) {
+            return a * a;
+        }
+
+        console.log( squared( 5 ) );
+
+        let squaredFuncAsVariable = function ( a ) {
+            return a * a;
+        }
+
+        console.log( squaredFuncAsVariable( 5 ) );
+
+
+        let squaredFuncAsArrow = ( a ) => {
+            return a * a;
+        }
+
+        console.log( squaredFuncAsArrow( 5 ) );
+
+
+    </script>
+</body>
+
+</html>

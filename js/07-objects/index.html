@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Objects</title>
+</head>
+
+<body>
+    <div class="jumbotron actor">
+        <h1>Objects!</h1>
+
+        <pre>
+            <code>
+                let akilan = {
+                    name: "Akilan",
+                    age: 34,
+                    workplacess: [ "Chennai", "Bangalore", "London" ],
+                    details:  () => {
+                        return `Hi, My name is ${akilan.name} and i'm ${akilan.age} years old`;
+                    }
+                }
+        
+                console.log( akilan.name );
+                console.log( akilan[ "name" ] );
+                for ( places of akilan[ "workplacess" ] )
+                {
+                    console.log( places );
+                }
+                console.log( akilan.details() )
+            </code>
+        </pre>
+    </div>
+
+
+    <script>
+
+        let akilan = {
+            name: "Akilan",
+            age: 34,
+            workplacess: [ "Chennai", "Bangalore", "London" ],
+            details:  () => {
+                return `Hi, My name is ${akilan.name} and i'm ${akilan.age} years old`;
+            }
+        }
+
+        console.log( akilan.name );
+        console.log( akilan[ "name" ] );
+        for ( places of akilan[ "workplacess" ] )
+        {
+            console.log( places );
+        }
+        console.log( akilan.details() )
+
+
+    </script>
+</body>
+
+</html>
