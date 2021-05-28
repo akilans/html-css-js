@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Stop Watch</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .actor {
+        width: 75%;
+    }
+
+    .timer {
+        font-size: 60px;
+    }
+</style>
+
+<body>
+    <div class="jumbotron actor text-center">
+        <h1>Stop Watch!</h1>
+        <div class="timer">
+            <span id="minutes-block">00</span> : <span id="seconds-block">00</span>
+        </div>
+        <button class="btn btn-primary" data-action="start">Start</button>
+        <button class="btn btn-danger" data-action="stop">Stop</button>
+        <button class="btn btn-primary" data-action="reset">Reset</button>
+    </div>
+
+
+    <script>
+        // get all the values
+
+        const startBtn = document.querySelector( "[data-action=start]" );
+        const stopBtn = document.querySelector( "[data-action=stop]" );
+        const resetBtn = document.querySelector( "[data-action=reset]" );
+        let min = document.querySelector( "#minutes-block" );
+        let sec = document.querySelector( "#seconds-block" );
+        let timerSeconds = 58; // start the timer from 0 seconds
+        let isRunning = false; // to avoid starting again for multiple clicks
+        let interval; // use this to clear interval
+        // add functions
+
+        let runTimer = () => {
+            timerSeconds++;
+            //console.log( timerSeconds );
+            sec.innerHTML = padZero( timerSeconds % 60 );
+            min.innerHTML = padZero( Math.floor( timerSeconds / 60 ) );
+        }
+
+        let startTimer = () => {
+            if ( isRunning )
+            {
+                return;
+            }
+            console.log( "Starting clock" );
+            isRunning = true;
+            interval = setInterval( runTimer, 1000 );
+
+        }
+
+        let stopTimer = () => {
+            console.log( "Stoping clock" );
+            isRunning = false;
+            clearInterval( interval );
+        }
+
+        let resetTimer = () => {
+            clearInterval( interval );
+            isRunning = false;
+            sec.innerHTML = "00";
+            min.innerHTML = "00";
+        }
+
+        let padZero = ( number ) => ( number >= 10 ) ? number : `0${number}`;
+
+        // get events
+
+        startBtn.addEventListener( "click", startTimer );
+        stopBtn.addEventListener( "click", stopTimer );
+        resetBtn.addEventListener( "click", resetTimer );
+
+
+    </script>
+</body>
+
+</html>

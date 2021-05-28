@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Scroll</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        min-height: 300vh;
+    }
+
+    .actor {
+        width: 75%;
+    }
+
+    .progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 10px;
+        background-color: lightseagreen;
+    }
+</style>
+
+<body>
+    <div class="progress"></div>
+    <div class="jumbotron actor">
+        <h1>Scroll!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, rerum quibusdam. Tenetur esse expedita
+            natus eligendi culpa ea totam fugiat quas sint, aut sed delectus. Deserunt quam quidem dicta nemo?</p>
+    </div>
+
+
+    <script>
+        let progress_line = document.querySelector( ".progress" );
+
+        // copied from internet
+        const debounce = ( func, delay ) => {
+            let inDebounce
+            return function () {
+                const context = this
+                const args = arguments
+                clearTimeout( inDebounce )
+                inDebounce = setTimeout( () => func.apply( context, args ), delay )
+            }
+        }
+
+        function createScrollLine() {
+            console.count( "scrolling" );
+            const windowHeight = window.innerHeight;
+            const bodyHeight = document.body.clientHeight;
+            const scrolled = window.scrollY;
+            const percentageScrolled = scrolled / ( bodyHeight - windowHeight ) * 100;
+            console.log( percentageScrolled );
+
+            progress_line.style.width = `${percentageScrolled}%`
+
+        }
+
+
+        //window.addEventListener( "scroll", createScrollLine );
+        // make some delay to the function call
+        window.addEventListener( "scroll", debounce( createScrollLine, 250 ) );
+
+    </script>
+</body>
+
+</html>

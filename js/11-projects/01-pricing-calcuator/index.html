@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Pricing Calculator</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .actor {
+        width: 75%;
+    }
+
+    form {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <div class="jumbotron actor">
+        <h1 class="text-center">Pricing Calculator!</h1>
+        <form>
+            <div class="form-group row">
+                <label for="price" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="price" value="20">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="quantity" class="col-sm-2 col-form-label">Quantity<span class="badge badge-light"
+                        id="quantity-badge"></span></label>
+                <div class="col-sm-10">
+                    <input type="range" class="form-control-range" id="quantity" min=1 max=10 step=1>
+                </div>
+            </div>
+            <div class="text-right" id="cost"></div>
+        </form>
+    </div>
+
+
+    <script>
+        // catch all the values
+        let price = document.querySelector( "#price" );
+        let quantity = document.querySelector( "#quantity" );
+        let cost = document.querySelector( "#cost" );
+        let quantity_badge = document.querySelector( "#quantity-badge" );
+
+
+        // function to calculate
+
+        let calculatePrice = () => {
+            total = price.value * quantity.value;
+            cost.innerHTML = "$ " + total.toFixed( 2 );
+            quantity_badge.innerHTML = quantity.value;
+        }
+
+        // add events
+
+        price.addEventListener( "input", calculatePrice );
+        quantity.addEventListener( "input", calculatePrice );
+
+        // calcuate onload
+        calculatePrice();
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Accordion</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .actor {
+        width: 75%;
+    }
+
+    .question {
+        font-size: 20px;
+        color: firebrick;
+        cursor: pointer;
+    }
+
+    .answer {
+        margin-top: 20px;
+        display: none;
+    }
+
+    .box {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <div class="jumbotron actor">
+        <h1 class="text-center">Accordion!</h1>
+        <div class="box">
+            <div class="question"> <span>What is DevOps?</span></div>
+            <div class="answer">
+                <p>Devops is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quidem
+                    asperiores, sequi voluptatum doloribus incidunt, iste, quibusdam dolores ipsum corrupti obcaecati
+                    ducimus facilis expedita. Quaerat veniam rem omnis sapiente at.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="question"> <span>What is DevOps?</span></div>
+            <div class="answer">
+                <p>Devops is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quidem
+                    asperiores, sequi voluptatum doloribus incidunt, iste, quibusdam dolores ipsum corrupti obcaecati
+                    ducimus facilis expedita. Quaerat veniam rem omnis sapiente at.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="question">
+                <span>What is DevOps?</span>
+            </div>
+            <div class="answer">
+                <p>Devops is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quidem
+                    asperiores, sequi voluptatum doloribus incidunt, iste, quibusdam dolores ipsum corrupti obcaecati
+                    ducimus facilis expedita. Quaerat veniam rem omnis sapiente at.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let answers = document.querySelectorAll( ".answer" );
+        let questions = document.querySelectorAll( ".question" );
+
+
+        function toggleanswer() {
+            console.log( this )
+            console.log( "coming..." )
+        }
+
+        questions.forEach( ( question ) => {
+            //console.log( question );
+            console.log( question.nextElementSibling )
+            let answer_content = question.nextElementSibling;
+
+            question.addEventListener( "click", () => {
+                console.log( answer_content.style.display );
+
+                if ( answer_content.style.display == "" || answer_content.style.display == "none" )
+                {
+                    answer_content.style.display = "block";
+                } else
+                {
+                    answer_content.style.display = "none";
+                }
+
+
+            } )
+        } )
+
+
+    </script>
+</body>
+
+</html>
